@@ -38,8 +38,8 @@ def filter_numbers(numbers, method):
         return True
 
     if method == ODD:
-        return (i for i in numbers if i % 2 != 0)
+        return [i for i in numbers if i % 2 != 0]
     elif method == EVEN:
-        return (i for i in numbers if i % 2 == 0)
+        return [i for i in numbers if i % 2 == 0]
     elif method == PRIME:
-        return (i for i in numbers if is_prime(i))
+        return [i for i in numbers if is_prime(i)]
