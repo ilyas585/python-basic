@@ -41,10 +41,12 @@ def filter_numbers(numbers, method):
         return True
 
     if method == ODD:
-        return filter(lambda x: x % 2 != 0, numbers)
+        res = filter(lambda x: x % 2 != 0, numbers)
     elif method == EVEN:
-        return filter(lambda x: x % 2 == 0, numbers)
+        res = filter(lambda x: x % 2 == 0, numbers)
     elif method == PRIME:
-        return filter(lambda x: is_prime(x), numbers)
+        res = filter(lambda x: is_prime(x), numbers)
     else:
-        return "ERROR"
+        res = []
+
+    return list(res)
