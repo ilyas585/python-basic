@@ -40,6 +40,6 @@ def filter_numbers(numbers, method):
     if method == ODD:
         return (i for i in numbers if i % 2 != 0)
     elif method == EVEN:
-        return (for i in numbers if i % 2 == 0)
+        return (i for i in numbers if i % 2 == 0)
     elif method == PRIME:
         return (i for i in numbers if is_prime(i))
