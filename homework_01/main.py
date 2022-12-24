@@ -12,7 +12,7 @@ def power_numbers(*numbers):
     # >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
-    return map(lambda x: x**2, numbers)
+    return list(map(lambda x: x**2, numbers))
 
 
 # filter types
