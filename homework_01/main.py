@@ -2,6 +2,7 @@
 Домашнее задание №1
 Функции и структуры данных
 """
+from math import ceil
 
 
 def power_numbers(*numbers):
@@ -34,11 +35,10 @@ def filter_numbers(numbers, method):
     def is_prime(number):
         if number < 2:
             return False
-        for i in range(2, number//2):
+        for i in range(2, ceil((number+1)/2)):
             if number % i == 0:
                 return False
         return True
-
 
     if method == ODD:
         return [i for i in numbers if i % 2 != 0]
