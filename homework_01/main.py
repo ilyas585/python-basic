@@ -32,10 +32,13 @@ def filter_numbers(numbers, method):
     <<< [2, 4]
     """
     def is_prime(number):
+        if number < 2:
+            return False
         for i in range(2, number//2):
             if number % i == 0:
                 return False
         return True
+
 
     if method == ODD:
         return [i for i in numbers if i % 2 != 0]
