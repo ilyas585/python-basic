@@ -46,3 +46,5 @@ def filter_numbers(numbers, method):
         return [i for i in numbers if i % 2 == 0]
     elif method == PRIME:
         return [i for i in numbers if is_prime(i)]
+    else:
+        return "ERROR"
