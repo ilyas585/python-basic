@@ -31,14 +31,14 @@ async def create_users(session: SessionType, users: list):
     for u in users:
         user = User(name=u['name'], username=u['username'], email=u['email'])
         session.add(user)
-    session.commit()
+    await session.commit()
 
 
 async def create_posts(session: SessionType, posts: list):
     for p in posts:
         post = Post(user_id=p['user_id'], title=p['title'], body=p['body'])
         session.add(post)
-    session.commit()
+    await session.commit()
 
 
 async def fetch_users_data():
