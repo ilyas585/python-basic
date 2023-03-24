@@ -63,7 +63,7 @@ class User(Base):
         nullable=False
     )
 
-    post = relationship(
+    posts = relationship(
         "Post",
         back_populates="user",
         uselist=False,
@@ -93,7 +93,7 @@ class Post(Base):
 
     user = relationship(
         "User",
-        back_populates="post",
+        back_populates="posts",
         uselist=False,
     )
 
