@@ -76,7 +76,7 @@ class User(Base):
 class Post(Base):
     user_id = Column(
         Integer,
-        ForeignKey("blog_users.id", name="fk_user_id"),
+        ForeignKey("users.id", name="fk_user_id"),
         unique=True,
         nullable=False
     )
