@@ -25,9 +25,11 @@ async def create_tables():
     async with async_engine.begin() as conn:
         # await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)
+        print("CREATED TABLES 999")
 
 
 async def create_users(session: SessionType, users: list):
+    print("START TO CREATE USERS 999")
     for u in users:
         user = User(name=u['name'], username=u['username'], email=u['email'])
         session.add(user)
@@ -35,6 +37,7 @@ async def create_users(session: SessionType, users: list):
 
 
 async def create_posts(session: SessionType, posts: list):
+    print("START TO CREATE POSTS 999")
     for p in posts:
         post = Post(user_id=p['user_id'], title=p['title'], body=p['body'])
         session.add(post)
