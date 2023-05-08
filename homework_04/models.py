@@ -65,12 +65,8 @@ class User(Base):
 
     post = relationship(
         "Post",
-        back_populates="user",
-        uselist=False,
+        back_populates="user"
     )
-
-    def __str__(self):
-        return f"User(id={self.id}, username={self.username!r}, email={self.email})"
 
 
 class Post(Base):
@@ -93,11 +89,5 @@ class Post(Base):
 
     user = relationship(
         "User",
-        back_populates="post",
-        uselist=False,
+        back_populates="post"
     )
-
-    def __str__(self):
-        return f"Post(id={self.id}, user_id={self.user_id}, title={self.title})"
-
-
