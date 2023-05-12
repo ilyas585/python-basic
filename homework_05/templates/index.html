@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>Hello Home page!</h1>
+  <h3>New topics I learned today.</h3>
+  <div class="badge bg-primary text-wrap">
+    <ul>
+      {% for n in new_topics %}
+        <li>{{ n }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}
