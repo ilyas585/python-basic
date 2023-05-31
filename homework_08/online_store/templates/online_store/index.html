@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Интернет аптека | Заказ лекарств
+{% endblock %}
+
+{% block body %}
+  {% include "inc-search-hat.html" %}
+  <br>
+  <div class="container">
+    <div class="row">
+      {% for item in object_list %}
+        <div class="col-sm-4">
+          <div class="card text-center h-100" >
+            <a href="/good/{{item.pk}}/">
+              <img src="{{item.img.url}}"  alt="{{item.name}}" width="200">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text"><small class="text-muted">{{item.category.name}}</small></p>
+            </div>
+            <a href="#" class="btn btn-primary">Добавить в корзину</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

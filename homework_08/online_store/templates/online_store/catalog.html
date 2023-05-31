@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Интернет аптека | Каталог
+{% endblock %}
+
+{% block body %}
+  {% include "inc-search-hat.html" %}
+  <br>
+  <div class="container">
+    {% for item in object_list %}
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <a href="/good/{{item.pk}}/">
+              <img src="{{item.img.url}}"  alt="{{item.name}}" width="200">
+            </a>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="/good/{{item.pk}}/">{{item.name}}</a>
+              </h5>
+              <p class="card-text">{{item.description}}</p>
+              <p class="card-text"><small class="text-muted">{{item.category.name}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
