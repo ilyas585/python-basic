@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  {{object.name}}
+{% endblock %}
+
+{% block body %}
+  {% include "inc-search-hat.html" %}
+  <br>
+  <div class="container">
+    <div class="card" >
+      <div class="card-body">
+        <h1 class="card-title">{{object.name}}</h1>
+        <p class="card-text"><small class="text-muted">{{object.category.name}}</small></p>
+        <img src="{{object.img.url|default_if_none:'#'}}" class="card-img-top" alt="{{object.name}}">
+        <h5>Описание</h5>
+        <p class="card-text">{{object.description}}</p>
+        <br>
+        <h5>Наличие в аптеках</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
